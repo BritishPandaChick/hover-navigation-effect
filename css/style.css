@@ -1,0 +1,62 @@
+/* import the fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+body {
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  background: #FF5964;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+
+.layer {
+  display: flex;
+  /* these two selectors aren't recognized by all browsers so you might need to use -webkit prefixes */
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* create styling to smooth out transition over teh body of the page */
+  transition: transform .4s;
+  transform: perspective(800px) scale(1) translateX(0) rotateY(0);
+  transform-style: preserve-3d;
+}
+
+nav {
+  vertical-align: center;
+}
+
+nav ul {
+  padding-left: 66.66%;
+  font-size: larger;
+  /* larger sets font-size to larger than the font size of the parent element */
+  line-height: 2;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a {
+  /* Change default anchor tag styling */
+  text-decoration:none;
+  color: #fff;
+}
+
+.front {
+  background: #FFFBC1;
+}
+
+/* creates animation that occurs when hover over page. Transform to change perspective, scale, and positioning of the .front section to see new nav hiding below it */
+body:hover .front {
+  transform: perspective(700px) scale(0.5) translateX(-16.66%) rotateY(25deg);
+  /* hover over text to check out the effect */
+}
